@@ -3,13 +3,42 @@
   "framework": null,
   "outputDirectory": "public",
   "redirects": [
-    { "source": "/mytrips", "destination": "/mytrips/", "permanent": true }
+    {
+      "source": "/mytrips",
+      "destination": "/mytrips/",
+      "permanent": true
+    }
   ],
   "rewrites": [
-    { "source": "/wesplit", "destination": "https://wesplit-gamma.vercel.app/wesplit" },
-    { "source": "/wesplit/:path*", "destination": "https://wesplit-gamma.vercel.app/wesplit/:path*" },
-    { "source": "/mytrips/", "destination": "https://mytrips-kappa.vercel.app/" },
-    { "source": "/mytrips/:path*/", "destination": "https://mytrips-kappa.vercel.app/:path*/" },
-    { "source": "/mytrips/:path*", "destination": "https://mytrips-kappa.vercel.app/:path*" }
-  ]
+    {
+      "source": "/wesplit",
+      "destination": "https://wesplit-gamma.vercel.app/wesplit"
+    },
+    {
+      "source": "/wesplit/:path*",
+      "destination": "https://wesplit-gamma.vercel.app/wesplit/:path*"
+    },
+    {
+      "source": "/mytrips/",
+      "destination": "https://mytrips-kappa.vercel.app/"
+    },
+    {
+      "source": "/mytrips/:path*/",
+      "destination": "https://mytrips-kappa.vercel.app/:path*/"
+    },
+    {
+      "source": "/mytrips/:path*",
+      "destination": "https://mytrips-kappa.vercel.app/:path*"
+    },
+    {
+      "source": "/formula1-dataanalysis",
+      "destination": "https://formula1-dataanalysis.vercel.app/formula1-dataanalysis"
+    },
+    {
+      "source": "/formula1-dataanalysis/:path*",
+      "destination": "https://formula1-dataanalysis.vercel.app/formula1-dataanalysis/:path*"
+    }
+  ],
+  "installCommand": "",
+  "buildCommand": ""
 }

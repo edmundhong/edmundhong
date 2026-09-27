@@ -1,0 +1,14 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "framework": null,
+  "outputDirectory": "public",
+  "redirects": [
+    { "source": "/mytrips", "destination": "/mytrips/", "permanent": true }
+  ],
+  "rewrites": [
+    { "source": "/wesplit", "destination": "https://REPLACE-WESPLIT.vercel.app/wesplit" },
+    { "source": "/wesplit/:path*", "destination": "https://REPLACE-WESPLIT.vercel.app/wesplit/:path*" },
+    { "source": "/mytrips/", "destination": "https://REPLACE-MYTRIPS.vercel.app/" },
+    { "source": "/mytrips/:path*", "destination": "https://REPLACE-MYTRIPS.vercel.app/:path*" }
+  ]
+}

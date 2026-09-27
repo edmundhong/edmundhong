@@ -1,5 +1,15 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "framework": null,
-  "outputDirectory": "public"
+  "outputDirectory": "public",
+  "redirects": [
+    { "source": "/mytrips", "destination": "/mytrips/", "permanent": true }
+  ],
+  "rewrites": [
+    { "source": "/wesplit", "destination": "https://wesplit-gamma.vercel.app/wesplit" },
+    { "source": "/wesplit/:path*", "destination": "https://wesplit-gamma.vercel.app/wesplit/:path*" },
+    { "source": "/mytrips/", "destination": "https://mytrips-kappa.vercel.app/" },
+    { "source": "/mytrips/:path*/", "destination": "https://mytrips-kappa.vercel.app/:path*/" },
+    { "source": "/mytrips/:path*", "destination": "https://mytrips-kappa.vercel.app/:path*" }
+  ]
 }

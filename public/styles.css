@@ -818,4 +818,6 @@ h1 em {
   color:var(--paper);
   background:var(--orange);
   border-color:var(--orange);
-}
+}.wordmark { display:flex; align-items:center; gap:10px; }
+.site-logo { display:block; width:72px; height:72px; object-fit:contain; }
+@media(max-width:600px) { .site-logo { width:52px; height:52px; } }

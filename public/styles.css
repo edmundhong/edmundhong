@@ -472,15 +472,15 @@ h1 em {
   color:var(--muted);
 }
 
-/* Frame the original screenshot's QR card (x:59, y:342, size:470). */
+/* Frame the 804 × 1348 image's white QR card (x:81, y:255, size:642). */
 .instagram-qr img {
   position:absolute;
   display:block;
-  width:125.106383%;
+  width:125.233645%;
   max-width:none;
   height:auto;
-  left:-12.553191%;
-  top:-72.765957%;
+  left:-12.616822%;
+  top:-39.719626%;
 }
 .instagram-bottom {
   display:flex;

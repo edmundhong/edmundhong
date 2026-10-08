@@ -34,4 +34,4 @@ Run `python -m http.server 8000 --directory public` and open `http://localhost:8
 
 The homepage and apps directory share `public/styles.css`. Both use local CSS and inline vector illustrations, with no build step, external fonts, or JavaScript required.
 
-The Instagram card links to `@edmund_hong`; it does not fetch posts or take daily screenshots. To display a manually supplied screenshot, add it at `public/images/instagram-snapshot.webp` and replace the `instagram-art` illustration in `public/index.html` with the image markup provided in the nearby HTML comment. The shared `instagram-snapshot` style fits the full image without cropping it.
+The Instagram card displays the supplied QR screenshot at `public/images/instagram-qr.png` and links to `https://www.instagram.com/edmund_hong/`. CSS frames the white QR card from the original screenshot, hiding the surrounding phone interface. Visitors can scan the QR or click anywhere on the card to open Instagram in a new tab.

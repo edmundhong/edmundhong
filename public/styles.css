@@ -420,73 +420,27 @@ h1 em {
   letter-spacing:1.4px;
 }
 
-.instagram-art {
-  height:148px;
+.instagram-qr {
   position:relative;
-  display:flex;
-  justify-content:center;
-  align-items:center;
-}
-
-.photo-tile {
-  width:108px;
-  height:105px;
-  border:6px solid #fcfaf3;
-  border-bottom-width:19px;
-  box-shadow:0 3px 7px #292e2712;
-  position:relative;
+  width:100%;
+  max-width:320px;
+  aspect-ratio:1;
+  margin:18px auto;
   overflow:hidden;
+  border-radius:20px;
+  background:#fff;
 }
 
-.tile-one {
-  background:#d3dfd8;
-  transform:rotate(-10deg);
-  margin-right:-8px;
-}
-
-.tile-two {
-  background:#edcfa8;
-  transform:rotate(9deg);
-  margin-top:12px;
-}
-
-.drawn-sun {
+/* Frame the original screenshot's QR card (x:59, y:342, size:470). */
+.instagram-qr img {
   position:absolute;
-  width:23px;
-  height:23px;
-  border-radius:50%;
-  background:#e5ae57;
-  top:11px;
-  right:13px;
+  display:block;
+  width:125.106383%;
+  max-width:none;
+  height:auto;
+  left:-12.553191%;
+  top:-72.765957%;
 }
-
-.drawn-hill {
-  position:absolute;
-  background:#768d74;
-  transform:rotate(36deg);
-  width:110px;
-  height:100px;
-  top:50px;
-  left:4px;
-  border-radius:12px;
-}
-
-.drawn-flower {
-  display:grid;
-  place-items:center;
-  height:100%;
-  font-size:67px;
-  color:#a9502c;
-}
-
-.photo-spark {
-  position:absolute;
-  right:15px;
-  top:15px;
-  font-size:28px;
-  color:#7b806b;
-}
-
 .instagram-bottom {
   display:flex;
   justify-content:space-between;
@@ -509,15 +463,6 @@ h1 em {
 .instagram-bottom svg {
   width:24px;
   height:24px;
-}
-
-.instagram-snapshot {
-  display:block;
-  width:100%;
-  height:190px;
-  object-fit:contain;
-  margin:16px 0;
-  border-radius:8px;
 }
 
 .site-footer {

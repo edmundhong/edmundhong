@@ -32,6 +32,18 @@ Run `python -m http.server 8000 --directory public` and open `http://localhost:8
 
 ## Homepage design
 
-The homepage and apps directory share `public/styles.css`. Both use local CSS and inline vector illustrations, with no build step, external fonts, or JavaScript required.
+The homepage and apps directory share `public/styles.css`. Both use local CSS and inline vector illustrations, with no build step or external fonts. The homepage uses a small script to load About Me hashtags from JSON; the initial hashtags remain visible when JavaScript is unavailable or loading fails.
+
+## Editing About Me hashtags
+
+Edit `public/about.json` to add, remove, or reorder entries in the `attributes` array. For example:
+
+```json
+{
+  "attributes": ["CuriousBuilder", "Traveller", "AlwaysLearning"]
+}
+```
+
+The page adds `#` automatically, removes spaces, and wraps tags into as many rows as needed on each screen size. Use CamelCase for readable multiword tags. An empty array hides the tags. Preview using the local server above so the browser can load the JSON. The list in `public/index.html` is only a fallback for unavailable JavaScript or a failed JSON request; update it too if you want that fallback to match your latest attributes.
 
 The Instagram card displays the supplied QR screenshot at `public/images/instagram-qr.png` and links to `https://www.instagram.com/edmund_hong/`. CSS frames the white QR card from the original screenshot, hiding the surrounding phone interface. Visitors can scan the QR or click anywhere on the card to open Instagram in a new tab.

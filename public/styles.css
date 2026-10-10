@@ -4,7 +4,80 @@
   --muted:#66695f;
   --orange:#ba4a25;
   --line:#dcded2;
+  --surface:#efeee5;
+  --surface-hover:#e8e8db;
+  --feature:#f0d6ba;
+  --card-text:#535647;
+  --control-border:#b4b6a7;
+  --arrow-border:#292e2735;
+  --instagram-border:#d7d9cd;
+  --focus:#9c3b1c;
+  --selection:#efd6a9;
+  --tag-bg:#e9ecdf;
+  --tag-border:#d6d9c9;
+  --tag-text:#43513c;
+  --tag-warm-bg:#f3e1cd;
+  --tag-warm-border:#e5c9ac;
+  --tag-warm-text:#934322;
   --serif:Georgia,'Times New Roman',serif;
+}
+
+:root[data-theme="dark"] {
+  --paper:#20231f;
+  --ink:#f1eee5;
+  --muted:#b5baad;
+  --orange:#f09a70;
+  --line:#454b40;
+  --surface:#2c3029;
+  --surface-hover:#373d32;
+  --feature:#49362a;
+  --card-text:#c9ccbe;
+  --control-border:#737c69;
+  --arrow-border:#737c69;
+  --instagram-border:#454b40;
+  --focus:#f09a70;
+  --selection:#664731;
+  --tag-bg:#333e2e;
+  --tag-border:#57664c;
+  --tag-text:#d4dfc8;
+  --tag-warm-bg:#48372a;
+  --tag-warm-border:#79553b;
+  --tag-warm-text:#f3b38b;
+}
+
+.header-actions {
+  display:flex;
+  flex-shrink:0;
+  align-items:center;
+  gap:24px;
+}
+
+.theme-toggle {
+  display:grid;
+  place-items:center;
+  flex-shrink:0;
+  width:44px;
+  height:44px;
+  padding:10px;
+  border:1px solid var(--control-border);
+  border-radius:50%;
+  background:transparent;
+  color:var(--ink);
+  cursor:pointer;
+}
+
+.theme-toggle[hidden] { display:none; }
+.theme-toggle:hover { background:var(--surface-hover); }
+.theme-toggle svg { width:22px; height:22px; }
+.theme-toggle .sun-icon { display:none; }
+[data-theme="dark"] .theme-toggle .moon-icon { display:none; }
+[data-theme="dark"] .theme-toggle .sun-icon { display:block; }
+
+@media(max-width:600px) {
+  .header-actions { gap:12px; }
+  .site-header { gap:12px; }
+  .wordmark { min-width:0; }
+  .wordmark>span { overflow-wrap:anywhere; }
 }
 
 * {
@@ -28,13 +101,13 @@ a {
   color:inherit;
 }
 
-a:focus-visible {
-  outline:3px solid #9c3b1c;
+a:focus-visible,button:focus-visible {
+  outline:3px solid var(--focus);
   outline-offset:6px;
 }
 
 ::selection {
-  background:#efd6a9;
+  background:var(--selection);
 }
 
 .wrap {
@@ -362,7 +435,7 @@ h1 em {
 }
 
 .apps-card {
-  background:#f0d6ba;
+  background:var(--feature);
 }
 
 .card-top {
@@ -383,12 +456,13 @@ h1 em {
   place-items:center;
   width:34px;
   height:34px;
-  border:1px solid #292e2735;
+  border:1px solid var(--arrow-border);
   border-radius:50%;
   font-size:20px;
 }
 
 .app-art {
+  color:#292e27;
   height:214px;
   position:relative;
   display:flex;
@@ -532,7 +606,7 @@ h1 em {
   font-size:13px;
   line-height:1.65;
   margin:0;
-  color:#535647;
+  color:var(--card-text);
 }
 
 .card-cta {
@@ -647,7 +721,7 @@ h1 em {
   display:inline-block;
   font-size:13px;
   text-decoration:none;
-  border-bottom:1px solid #b4b6a7;
+  border-bottom:1px solid var(--control-border);
   padding-bottom:5px;
   overflow-wrap:anywhere;
 }
@@ -657,16 +731,16 @@ h1 em {
 }
 
 .instagram-card {
-  border:1px solid #d7d9cd;
+  border:1px solid var(--instagram-border);
   border-radius:15px;
   padding:22px;
   text-decoration:none;
-  background:#efeee5;
+  background:var(--surface);
   transition:background .2s;
 }
 
 .instagram-card:hover {
-  background:#e8e8db;
+  background:var(--surface-hover);
 }
 
 .instagram-top {
@@ -711,23 +785,23 @@ h1 em {
 .about-attributes li {
   max-width:100%;
   padding:5px 11px;
-  border:1px solid #d6d9c9;
+  border:1px solid var(--tag-border);
   border-radius:999px;
-  background:#e9ecdf;
-  color:#43513c;
+  background:var(--tag-bg);
+  color:var(--tag-text);
   font-size:12px;
   font-weight:600;
   overflow-wrap:anywhere;
 }
 
 .about-attributes li:nth-child(3n + 1) {
-  background:#f3e1cd;
-  border-color:#e5c9ac;
-  color:#934322;
+  background:var(--tag-warm-bg);
+  border-color:var(--tag-warm-border);
+  color:var(--tag-warm-text);
 }
 
 .about-attributes li:nth-child(3n) {
-  background:#efeee5;
+  background:var(--surface);
   border-color:var(--line);
   color:var(--muted);
 }
@@ -814,7 +888,7 @@ h1 em {
 .directory-card {
   padding:28px;
   border:1px solid var(--line);
-  background:#efeee5;
+  background:var(--surface);
   border-radius:18px;
   display:flex;
   flex-direction:column;
@@ -1049,7 +1123,7 @@ h1 em {
   flex:0 0 36px;
   width:36px;
   height:36px;
-  border:1px solid #b4b6a7;
+  border:1px solid var(--control-border);
   border-radius:50%;
   text-decoration:none;
   transition:color .2s,background .2s,border-color .2s;

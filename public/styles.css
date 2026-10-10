@@ -528,6 +528,13 @@ h1 em {
   line-height:1.9;
 }
 
+.bio-lead {
+  font:normal clamp(21px,2.2vw,26px)/1.5 var(--serif);
+  color:var(--ink);
+  margin-bottom:16px;
+  max-width:440px;
+}
+
 .signoff {
   font:italic 11px var(--serif);
   color:var(--muted);
@@ -589,10 +596,10 @@ h1 em {
 .about-attributes {
   display:flex;
   flex-wrap:wrap;
-  gap:10px;
+  gap:8px;
   list-style:none;
   padding:0;
-  margin:0 0 24px;
+  margin:0 0 28px;
 }
 
 .about-attributes[hidden] {
@@ -601,12 +608,12 @@ h1 em {
 
 .about-attributes li {
   max-width:100%;
-  padding:7px 13px;
+  padding:5px 11px;
   border:1px solid #d6d9c9;
   border-radius:999px;
   background:#e9ecdf;
   color:#43513c;
-  font-size:clamp(12px,1.1vw,14px);
+  font-size:12px;
   font-weight:600;
   overflow-wrap:anywhere;
 }

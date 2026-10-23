@@ -1,48 +1,66 @@
 :root {
-  --paper:#f7f4ec;
-  --ink:#292e27;
-  --muted:#66695f;
-  --orange:#ba4a25;
-  --line:#dcded2;
-  --surface:#efeee5;
-  --surface-hover:#e8e8db;
-  --feature:#f0d6ba;
-  --card-text:#535647;
-  --control-border:#b4b6a7;
-  --arrow-border:#292e2735;
-  --instagram-border:#d7d9cd;
-  --focus:#9c3b1c;
-  --selection:#efd6a9;
-  --tag-bg:#e9ecdf;
-  --tag-border:#d6d9c9;
-  --tag-text:#43513c;
-  --tag-warm-bg:#f3e1cd;
-  --tag-warm-border:#e5c9ac;
-  --tag-warm-text:#934322;
+  color-scheme:light;
+  --sky:#dce8f8;
+  --horizon:#ffead5;
+  --night:#d9e5f3;
+  --art-surface:#f4f7fc;
+  --art-line:#b5c7dd;
+  --art-blue:#3c638e;
+  --art-warm:#a64724;
+  --shadow:#10274418;
+  --paper:#edf3fa;
+  --ink:#182c48;
+  --muted:#4d6079;
+  --orange:#a64724;
+  --line:#bbcbdc;
+  --surface:#e2ebf6;
+  --surface-hover:#d9e5f3;
+  --feature:#e6e9f2;
+  --card-text:#435772;
+  --control-border:#70849d;
+  --arrow-border:#70849d;
+  --instagram-border:#bbcbdc;
+  --focus:#a64724;
+  --selection:#f5c9a8;
+  --tag-bg:#dce8f6;
+  --tag-border:#afc4df;
+  --tag-text:#284c78;
+  --tag-warm-bg:#fae4d4;
+  --tag-warm-border:#d9b397;
+  --tag-warm-text:#914222;
   --serif:Georgia,'Times New Roman',serif;
 }
 
 :root[data-theme="dark"] {
-  --paper:#20231f;
-  --ink:#f1eee5;
-  --muted:#b5baad;
-  --orange:#f09a70;
-  --line:#454b40;
-  --surface:#2c3029;
-  --surface-hover:#373d32;
-  --feature:#49362a;
-  --card-text:#c9ccbe;
-  --control-border:#737c69;
-  --arrow-border:#737c69;
-  --instagram-border:#454b40;
-  --focus:#f09a70;
-  --selection:#664731;
-  --tag-bg:#333e2e;
-  --tag-border:#57664c;
-  --tag-text:#d4dfc8;
-  --tag-warm-bg:#48372a;
-  --tag-warm-border:#79553b;
-  --tag-warm-text:#f3b38b;
+  color-scheme:dark;
+  --sky:#162e50;
+  --horizon:#513326;
+  --night:#080f1d;
+  --art-surface:#12233c;
+  --art-line:#496181;
+  --art-blue:#9bbce8;
+  --art-warm:#ffb477;
+  --shadow:#02081555;
+  --paper:#0b1426;
+  --ink:#edf3fa;
+  --muted:#b4c4db;
+  --orange:#ffb477;
+  --line:#354c69;
+  --surface:#162a46;
+  --surface-hover:#203b5e;
+  --feature:#1b2d48;
+  --card-text:#c1cee1;
+  --control-border:#7e96b5;
+  --arrow-border:#7e96b5;
+  --instagram-border:#354c69;
+  --focus:#ffb477;
+  --selection:#674732;
+  --tag-bg:#203b5e;
+  --tag-border:#49688e;
+  --tag-text:#cce0fa;
+  --tag-warm-bg:#42332e;
+  --tag-warm-border:#86634c;
+  --tag-warm-text:#ffc18e;
 }
 
 .header-actions {
@@ -91,10 +109,24 @@ html {
 
 body {
   margin:0;
-  background:var(--paper);
+  /* A drifting sunset glow above the steady orange-to-night progression. */
+  background-color:var(--night);
+  background-image:
+    radial-gradient(ellipse at 50% 0%,var(--horizon) 0%,transparent 60%),
+    linear-gradient(180deg,var(--horizon) 0%,var(--sky) 45%,var(--night) 100%);
+  background-size:180% 75%,100% 100%;
+  background-position:0% 0%,0% 0%;
+  background-repeat:no-repeat;
+  animation:blue-hour-drift 24s ease-in-out infinite alternate;
+  min-height:100vh;
   color:var(--ink);
   font:16px/1.6 'Segoe UI',Arial,sans-serif;
   -webkit-font-smoothing:antialiased;
+}
+
+@keyframes blue-hour-drift {
+  from { background-position:0% 0%,0% 0%; }
+  to { background-position:100% 0%,0% 0%; }
 }
 
 a {
@@ -314,8 +346,8 @@ a:focus-visible,button:focus-visible {
   aspect-ratio:7 / 8;
   overflow:hidden;
   border-radius:22px;
-  background:#dce5df;
-  box-shadow:0 12px 30px #72503a14;
+  background:var(--surface);
+  box-shadow:0 12px 30px var(--shadow);
 }
 
 .hero-portrait img {
@@ -431,7 +463,7 @@ h1 em {
 
 .feature-card:hover,.directory-card:hover {
   transform:translateY(-4px);
-  box-shadow:0 12px 25px #292e2710;
+  box-shadow:0 12px 25px var(--shadow);
 }
 
 .apps-card {
@@ -462,7 +494,7 @@ h1 em {
 }
 
 .app-art {
-  color:#292e27;
+  color:var(--ink);
   height:214px;
   position:relative;
   display:flex;
@@ -473,17 +505,17 @@ h1 em {
 .mini-window {
   width:74%;
   max-width:360px;
-  background:#fcf8ef;
-  border:1px solid #40322620;
+  background:var(--art-surface);
+  border:1px solid var(--art-line);
   border-radius:9px;
   transform:rotate(-6deg);
-  box-shadow:9px 12px 0 #be69491b;
+  box-shadow:9px 12px 0 var(--shadow);
   overflow:hidden;
 }
 
 .window-bar {
   padding:10px 12px;
-  border-bottom:1px solid #ddd8cd;
+  border-bottom:1px solid var(--art-line);
   display:flex;
   align-items:center;
   gap:4px;
@@ -493,13 +525,13 @@ h1 em {
   width:5px;
   height:5px;
   border-radius:50%;
-  background:#bba891;
+  background:var(--art-blue);
 }
 
 .window-bar span {
   margin-left:8px;
   font-size:8px;
-  color:#726656;
+  color:var(--muted);
 }
 
 .window-content {
@@ -510,8 +542,8 @@ h1 em {
 }
 
 .app-symbol {
-  background:#eac394;
-  color:#96411c;
+  background:var(--tag-warm-bg);
+  color:var(--tag-warm-text);
   border-radius:8px;
   padding:0 10px;
   font-size:30px;
@@ -524,7 +556,7 @@ h1 em {
 .skeleton {
   display:block;
   height:5px;
-  background:#d3c9b6;
+  background:var(--art-line);
   border-radius:5px;
   margin:7px 0;
 }
@@ -546,7 +578,7 @@ h1 em {
 }
 
 .mini-chart span {
-  background:#c3653c;
+  background:var(--art-warm);
   flex:1;
   border-radius:3px 3px 0 0;
   height:25%;
@@ -580,9 +612,9 @@ h1 em {
   position:absolute;
   right:1px;
   bottom:29px;
-  background:#f9f1e2;
+  background:var(--tag-warm-bg);
   padding:7px 12px;
-  border:1px solid #d6b68f;
+  border:1px solid var(--tag-warm-border);
   border-radius:5px;
   font:italic 12px var(--serif);
   transform:rotate(5deg);
@@ -593,7 +625,7 @@ h1 em {
   left:8px;
   top:27px;
   font-size:39px;
-  color:#a84a23;
+  color:var(--orange);
 }
 
 .card-copy h2,.card-copy h3 {
@@ -915,21 +947,21 @@ h1 em {
 }
 
 .split-art {
-  background:#dce3d3;
+  background:var(--tag-bg);
 }
 
 .split-mark {
   font:normal 65px var(--serif);
-  color:#3b563d;
+  color:var(--art-blue);
   letter-spacing:-5px;
 }
 
 .split-mark span {
-  color:#526c49;
+  color:var(--orange);
 }
 
 .f1-art {
-  background:#f0d6ba;
+  background:var(--feature);
 }
 
 .f1-art svg {
@@ -1102,6 +1134,7 @@ h1 em {
   }
   *,*::before,*::after {
     transition:none!important;
+    animation:none!important;
   }
 }
 

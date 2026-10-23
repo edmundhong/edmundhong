@@ -19,7 +19,7 @@
     root.dataset.theme = theme;
     root.style.colorScheme = theme;
     var color = document.querySelector('meta[name="theme-color"]');
-    if (color) color.content = theme === 'dark' ? '#20231f' : '#f7f4ec';
+    if (color) color.content = theme === 'dark' ? '#0b1426' : '#edf3fa';
     if (button) {
       var label = 'Switch to ' + (theme === 'dark' ? 'light' : 'dark') + ' theme';
       button.setAttribute('aria-label', label);

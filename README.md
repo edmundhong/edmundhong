@@ -1,9 +1,10 @@
 # Edmund Hong
 
-Homepage and planned routing project for **edmundhong.com**. Applications remain in their own repositories and deploy independently.
+Homepage and planned routing project for **edmundhong.com**. Larger applications remain in their own repositories and deploy independently; Colour Hunting is built into this static site.
 
 | Public path | Repository | Upstream path |
 | --- | --- | --- |
+| `/colour-hunting` | This repository | Static colour assignment mini app |
 | `/` | [edmundhong](https://github.com/edmundhong/edmundhong) | Static homepage |
 | `/wesplit` and children | [wesplit](https://github.com/edmundhong/wesplit) | Preserve `/wesplit` |
 
@@ -47,3 +48,9 @@ Edit `public/about.json` to add, remove, or reorder entries in the `attributes` 
 The page adds `#` automatically, removes spaces, and wraps tags into as many rows as needed on each screen size. Use CamelCase for readable multiword tags. An empty array hides the tags. Preview using the local server above so the browser can load the JSON. The list in `public/index.html` is only a fallback for unavailable JavaScript or a failed JSON request; update it too if you want that fallback to match your latest attributes.
 
 The Instagram card displays the supplied QR screenshot at `public/images/instagram-qr.png` and links to `https://www.instagram.com/edmund_hong/`. CSS frames the white QR card from the original screenshot, hiding the surrounding phone interface. Visitors can scan the QR or click anywhere on the card to open Instagram in a new tab.
+
+## Colour Hunting
+
+Visit `/colour-hunting` (or `/colour-hunting/`) to assign unique colours to 1–10 people. Random mode draws from red, orange, yellow, green, blue, purple, pink, brown, black, and white; manual mode requires exactly one selected colour per person. Ten participants use the full palette. Shuffle again redraws using the current mode; Edit setup preserves names and choices.
+
+The app lives in `public/colour-hunting/`, uses vanilla JavaScript and scoped CSS alongside the shared theme, and keeps names only in page memory. Preview it at `http://localhost:8000/colour-hunting/` using the static server above. Vercel rewrites also support the URL without a trailing slash.

@@ -6,6 +6,8 @@
     { "source": "/mytrips", "destination": "/mytrips/", "permanent": true }
   ],
   "rewrites": [
+    { "source": "/colour-hunting", "destination": "/colour-hunting/index.html" },
+    { "source": "/colour-hunting/", "destination": "/colour-hunting/index.html" },
     { "source": "/mytrips/", "destination": "https://mytrips-kappa.vercel.app/" },
     { "source": "/mytrips/:path*/", "destination": "https://mytrips-kappa.vercel.app/:path*/" },
     { "source": "/mytrips/:path*", "destination": "https://mytrips-kappa.vercel.app/:path*" },
